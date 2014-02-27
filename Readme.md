@@ -5,5 +5,4 @@ Feature to come:
 
 	Soon: Put in your own numbers, of course.
 	Later: Put in number of questions, passages, etc. Program will generate correct timer.
-	Latest: Put in structure of test taking opportunity. Program will prompt to move on from each part 
-appropriately.
+	Latest: Put in structure of test taking opportunity. Program will prompt to move on from each part appropriately.
