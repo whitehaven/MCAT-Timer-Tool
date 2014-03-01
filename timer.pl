@@ -1,9 +1,17 @@
 use strict;
 use warnings;
 
-my $hours=0;
-my $minutes=40;
-my $seconds=0;
+print("Welcome to MCAT Timer Tool\n");
+
+print("Hours to run:");
+my $hours = <STDIN>;
+
+print("Minutes to run:");
+my $minutes=<STDIN>;
+
+print("Seconds to run:");
+my $seconds=<STDIN>;
+
 my $countdown = $hours*60*60 + $minutes*60 + $seconds; # go to time in secs.
 
 $| = 1;
@@ -23,10 +31,21 @@ for (;;)
       ($end_time - $time) / (   60) % 60,
       ($end_time - $time)           % 60,
    );
-
+   if ($end_time - $time <= 5)
+   {
+      system('echo "\a"');
+   }
    sleep(1);
 }
 
-print("\rKABOOM!!!!\n");
+print("\rOVER !!!\n");
 
-system('echo -e "\a"');
+system('echo "\a"');
+system('echo "\a"');
+system('echo "\a"');
+
+sleep(1);
+
+system('echo "\a"');
+system('echo "\a"');
+system('echo "\a"');
