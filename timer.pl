@@ -1,3 +1,4 @@
+#whitehaven MCAT Utilities
 use strict;
 use warnings;
 
@@ -26,18 +27,29 @@ for (;;)
    my $time = time;
    last if ($time >= $end_time);
    
-   printf("\r%02d:%02d:%02d",
-      ($end_time - $time) / (60*60),
-      ($end_time - $time) / (   60) % 60,
-      ($end_time - $time)           % 60,
+   #Print time
+   system('clear');
+   
+   printf("%02d:%02d:%02d",
+      ($end_time - $time) / (60*60),		#hours
+      ($end_time - $time) / (   60) % 60,	#minutes
+	  ($end_time - $time)           % 60,	#seconds
    );
-   if ($end_time - $time <= 5)
+   
+   #Print question name
+   print("\n\nYou should be on question: ", (( $time - $beg_time )/ 60 % 60 ) + 1); #Time since beginning (seconds) / 60 -> T since beginning (minutes) % 60 -> +1 fixes for non-0 question start
+  
+   if ($end_time - $time <= 3) #Warning beeps
    {
       system('echo "\a"');
    }
+   
    sleep(1);
+   
 }
 
+system('clear');		#Final alarm, sounds alarmy.
+print("00:00:00\n");
 print("\rOVER !!!\n");
 
 system('echo "\a"');
